@@ -17,8 +17,8 @@ const events = [
         <img
           src={chiesaIcon}
           alt="Chiesa"
-          className="w-20 h-20 object-contain mix-blend-darken"
-          style={{ filter: 'contrast(1.1) brightness(1.05)', opacity: 0.8 }}
+          className="w-20 h-20 object-contain"
+          style={{ opacity: 0.8 }}
         />
       </div>
     ),
@@ -164,7 +164,7 @@ const Itinerary = () => {
             initial={{ opacity: 0, rotate: 0 }}
             whileInView={{ opacity: 0.8, rotate: -15 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8, duration: 0.6 }}
+            transition={{ delay: 0.9, duration: 0.7 }}
           >
             <img
               src={logo}

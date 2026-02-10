@@ -52,7 +52,7 @@ const GiftsSection = () => {
                 animate={{ opacity: 1, transition: { delay: 0.7, duration: 0.3 } }}
                 exit={{ opacity: 0, transition: { duration: 0.2 } }}
               >
-                Clicca sul regalo
+                Clicca qui
               </motion.p>
             )}
           </AnimatePresence>
