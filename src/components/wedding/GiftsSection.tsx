@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Gift, Heart, ExternalLink } from "lucide-react";
 import { useState } from "react";
-// import tastoRegalo from "@/assets/tasto_regalo.png";
+import tastoRegalo from "@/assets/tasto_regalo.png";
 import {
   Dialog,
   DialogContent,
@@ -41,8 +41,8 @@ const GiftsSection = () => {
             }
           }}
         >
-          <div className="w-24 h-24 rounded-full overflow-hidden relative flex items-center justify-center bg-gray-100 border border-gray-300">
-            <Gift className="w-12 h-12 text-gold" />
+          <div className="w-24 h-24 rounded-full overflow-hidden relative">
+            <img src={tastoRegalo} alt="Regalo" className="absolute inset-0 w-full h-full object-cover" />
           </div>
         </motion.div>
 

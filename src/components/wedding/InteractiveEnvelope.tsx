@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-// import couplePolaroid from "@/assets/bikini.webp";
-// import logo from "@/assets/logo.webp";
+import couplePolaroid from "@/assets/bikini.webp";
+import logo from "@/assets/logo.webp";
 
 const InteractiveEnvelope = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -109,9 +109,11 @@ const InteractiveEnvelope = () => {
             }}
             transition={{ duration: 0.5, delay: isOpen ? 0.2 : 0.5 }}
           >
-            <div className="w-24 h-24 flex items-center justify-center bg-gray-100 border border-gray-300 rounded-full">
-              <span className="text-gold text-5xl">💍</span>
-            </div>
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-24 h-24 object-contain drop-shadow-lg"
+            />
           </motion.div>
         </div>
       </motion.div>

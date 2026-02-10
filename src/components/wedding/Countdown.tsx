@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 // import callaLilies from "@/assets/calla-lilies.png";
-// import calle from "@/assets/calle.webp";
+import calle from "@/assets/calle.webp";
 
 interface TimeLeft {
   days: number;
@@ -44,13 +44,13 @@ const Countdown = () => {
   return (
     <section id="countdown" className="relative py-24 px-6 paper-texture overflow-hidden">
       {/* Background image */}
-      {/* <div className="absolute -top-20 left-0 right-0 flex justify-center pointer-events-none">
+      <div className="absolute -top-20 left-0 right-0 flex justify-center pointer-events-none">
         <img 
           src={calle}
           alt=""
           className="w-auto max-w-full opacity-50 mix-blend-darken"
         />
-      </div> */}
+      </div>
       
       {/* Decorative florals */}
       {/* <motion.img

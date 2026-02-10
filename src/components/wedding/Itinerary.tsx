@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
-// import chiesaIcon from "@/assets/chiesa.png";
-// import coppiaIcon from "@/assets/coppia.png";
-// import logo from "@/assets/logo.webp";
-// import hotelIcon from "@/assets/hotel.png";
+import chiesaIcon from "@/assets/chiesa.png";
+import coppiaIcon from "@/assets/coppia.png";
+import logo from "@/assets/logo.webp";
+import hotelIcon from "@/assets/hotel.png";
 
 const events = [
   {
@@ -13,8 +13,13 @@ const events = [
     address: "Madonna della Libera n°2 | C.mare di Stabia (NA)",
     mapsLink: "https://maps.app.goo.gl/DR7fF6fvaN1DESpm8",
     icon: (
-      <div className="bg-inherit p-1 rounded-sm flex items-center justify-center w-20 h-20 bg-gray-100 border border-gray-300">
-        <MapPin className="w-10 h-10 text-gold" />
+      <div className="bg-inherit p-1 rounded-sm">
+        <img
+          src={chiesaIcon}
+          alt="Chiesa"
+          className="w-20 h-20 object-contain mix-blend-darken"
+          style={{ filter: 'contrast(1.1) brightness(1.05)', opacity: 0.8 }}
+        />
       </div>
     ),
   },
@@ -24,14 +29,19 @@ const events = [
     location: "Il Bikini",
     address: "Strada statale sorrentina n°145 | C.mare di Stabia (NA)",
     mapsLink: "https://maps.app.goo.gl/26vpqCCW3tRsKDSM8",
-    icon: <div className="w-32 h-32 flex items-center justify-center bg-gray-100 border border-gray-300"><MapPin className="w-12 h-12 text-gold" /></div>,
+    icon: <img src={coppiaIcon} alt="Ricevimento" className="w-32 h-32 object-contain" style={{ mixBlendMode: 'multiply' }} />,
   },
   {
     title: "Notte in hotel",
     location: "Si prega di contattare gli sposi",
     icon: (
-      <div className="bg-inherit p-1 rounded-sm flex items-center justify-center w-32 h-32 bg-gray-100 border border-gray-300">
-        <MapPin className="w-16 h-16 text-gold" />
+      <div className="bg-inherit p-1 rounded-sm">
+        <img
+          src={hotelIcon}
+          alt="Hotel"
+          className="w-32 h-32 object-contain mix-blend-darken"
+          style={{ filter: 'contrast(1.1) brightness(1.05)', opacity: 0.8 }}
+        />
       </div>
     ),
   },
@@ -141,9 +151,11 @@ const Itinerary = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <div className="w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center bg-gray-100 border border-gray-300 rounded-full">
-              <span className="text-gold text-5xl">💍</span>
-            </div>
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+            />
           </motion.div>
         </motion.div>
       </motion.div>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 // import callaLilies from "@/assets/calla-lilies.png";
-// import couplePolaroid from "@/assets/bikini.webp";
-// import logo from "@/assets/logo.webp";
+import couplePolaroid from "@/assets/bikini.webp";
+import logo from "@/assets/logo.webp";
 import AudioPlayer from "@/components/wedding/AudioPlayer";
 
 const HeroSection = () => {
@@ -229,9 +229,13 @@ const HeroSection = () => {
                     }}
                     >
                     <div className="bg-card p-3 sm:p-4 pb-3 sm:pb-4 shadow-card rounded-sm">
-                                                <div className="w-52 sm:w-64 md:w-80 h-64 flex items-center justify-center bg-gray-100 border border-gray-300">
-                                                    <span className="text-gold text-6xl">💑</span>
-                                                </div>
+                        <img
+                        src={couplePolaroid}
+                        alt="La nostra foto"
+                        loading="lazy"
+                        decoding="async"
+                        className="w-52 sm:w-64 md:w-80 h-auto object-contain"
+                        />
                     </div>
                     </motion.div>
                 )}
@@ -313,9 +317,11 @@ const HeroSection = () => {
                         }}
                         transition={{ duration: 0.5, delay: isOpen ? 0.2 : 0.5 }}
                     >
-                                                <div className="w-full h-full flex items-center justify-center bg-gray-100 border border-gray-300 rounded-full">
-                                                    <span className="text-gold text-5xl">💍</span>
-                                                </div>
+                        <img
+                            src={logo}
+                            alt="Logo"
+                            className="w-full h-full object-contain drop-shadow-lg"
+                        />
                     </motion.div>
                 </div>
             </div>

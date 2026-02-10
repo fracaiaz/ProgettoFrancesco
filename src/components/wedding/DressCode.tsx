@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-// import abitoUomo from "@/assets/abito_uomo.png";
-// import abitoDonna from "@/assets/abito_donna.png";
+import abitoUomo from "@/assets/abito_uomo.png";
+import abitoDonna from "@/assets/abito_donna.png";
 
 const DressCode = () => {
   return (
@@ -52,8 +52,13 @@ const DressCode = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="w-36 h-44 mb-4 relative flex items-center justify-center bg-gray-100 border border-gray-300">
-                <span className="text-gold text-6xl">👔</span>
+              <div className="w-36 h-44 mb-4 relative">
+                <img 
+                  src={abitoUomo} 
+                  alt="Abito uomo" 
+                  className="w-full h-full object-contain mix-blend-darken"
+                  style={{ filter: 'contrast(1.1) brightness(1.05)', opacity: 0.8 }}
+                />
               </div>
               <p className="text-sm font-sans text-muted-foreground">Uomini</p>
             </motion.div>
@@ -71,9 +76,14 @@ const DressCode = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-                <div className="w-36 h-44 mb-4 relative flex items-center justify-center bg-gray-100 border border-gray-300">
-                  <span className="text-gold text-6xl">👗</span>
-                </div>
+                <div className="w-36 h-44 mb-4 relative">
+                <img 
+                  src={abitoDonna} 
+                  alt="Abito donna" 
+                  className="w-full h-full object-contain mix-blend-darken"
+                    style={{ filter: 'contrast(1.1) brightness(1.05) hue-rotate(-15deg) saturate(0.8)', opacity: 0.8 }}
+                />
+              </div>
               <p className="text-sm font-sans text-muted-foreground">Donne</p>
             </motion.div>
           </div>
