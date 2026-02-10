@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
-import chiesaIcon from "@/assets/chiesa.png";
+import chiesaIcon from "@/assets/chiesa.webp";
 import coppiaIcon from "@/assets/coppia.png";
 import logo from "@/assets/logo.webp";
 import hotelIcon from "@/assets/hotel.png";

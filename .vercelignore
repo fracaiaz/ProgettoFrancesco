@@ -23,6 +23,12 @@ node_modules/
 *.mpeg
 *.wav
 
+# Exclude large PNG files (we use optimized webp versions)
+src/assets/chiesa.png
+src/assets/calle.png
+src/assets/logo.png
+src/assets/bikini.jpeg
+
 # Exclude image and font folders
 # src/assets/
 # public/fonts/
