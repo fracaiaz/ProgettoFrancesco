@@ -29,10 +29,10 @@ const GiftsSection = () => {
           tabIndex={0}
           aria-expanded={showDetails}
           className="inline-block mb-6 cursor-pointer"
-          initial={{ scale: 0, rotate: -10 }}
-          whileInView={{ scale: 1, rotate: 0 }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
+          transition={{ delay: 0.4, type: "spring", stiffness: 150 }}
           onClick={() => setShowDetails((v) => !v)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
