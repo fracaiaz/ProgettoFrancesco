@@ -7,6 +7,58 @@ import { useState } from "react";
 
 const ConfermaPartecipazione = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [nome, setNome] = useState("");
+  const [adulti, setAdulti] = useState<number>(0);
+  const [bambini, setBambini] = useState<number>(0);
+  const [transfer, setTransfer] = useState("");
+  const [intolleranze, setIntolleranze] = useState("");
+
+  // Inserisci qui il numero di telefono in formato internazionale (es: 393331234567)
+  const numeroWhatsApp = "393932169648";
+
+  const handleInviaRisposta = () => {
+    if (!nome.trim()) {
+      alert("Per favore, inserisci il tuo nome");
+      return;
+    }
+
+    if (!selectedOption) {
+      alert("Per favore, seleziona se potrai partecipare");
+      return;
+    }
+
+    let messaggio = "CONFERMA PARTECIPAZIONE MATRIMONIO*%0A%0A";
+    messaggio += "Cari Annamaria&Agostino, sono ${encodeURIComponent(nome)}%0A%0A";
+
+    if (selectedOption === 'si') {
+      messaggio += 'Volevo dirvi che sarò al vostro matrimonio!%0A%0A';
+
+      if (adulti > 1 && bambini > 1) {
+        messaggio += 'Saremo in totale ${adulti} adulti e ${bambini} bambini.%0A%0A';
+      }
+      else if (adulti == 1 && bambini > 0) {
+        messaggio += 'Saremo in totale 1 adulto e ${bambini} bambini.%0A%0A';
+      } else {
+        messaggio += "Per l'occasione sarò da solo.%0A%0A";
+      }
+
+      if (intolleranze.trim() || transfer.trim()) {
+        messaggio += "Inoltre, volevo comunicarvi le seguenti informazioni:%0A%0A";
+        if (transfer.trim()) {
+          messaggio += `Per quanto riguarda la necessità di un transfer: ${encodeURIComponent(transfer)}%0A%0A`;
+        }
+        if (intolleranze.trim()) {
+          messaggio += `Per quanto riguarda eventuali intolleranze alimentari: ${encodeURIComponent(intolleranze)}%0A%0A`;
+        }
+      }
+    } else {
+      messaggio += "Mi dispace informarvi che non potrò essere presente al vostro matrimonio, ma quel giorno vi porterò nel mio cuore. Vi auguro una giornata meravigliosa!";
+    }
+
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${messaggio}`;
+    window.open(urlWhatsApp, '_blank');
+  };
+
   return (
     <section className="pt-8 pb-20 px-6 paper-texture">
       <motion.div
@@ -40,6 +92,8 @@ const ConfermaPartecipazione = () => {
               </Label>
               <Textarea
                 id="nome"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
                 className="resize-none bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2"
                 rows={1}
               />
@@ -65,52 +119,61 @@ const ConfermaPartecipazione = () => {
                   onClick={() => setSelectedOption('no')}
                 />
               </div>
-                {selectedOption === 'si' && (
-                  <div className="mb-6 mt-4 text-left">
-                    <Label className="font-sans text-sm text-muted-foreground mb-2 block">
-                      Per quante persone confermi la partecipazione?
-                    </Label>
-                    <div className="flex gap-4">
-                       <div className="flex-1">
-                         <Label htmlFor="adulti" className="font-sans text-xs text-muted-foreground mb-1 block">Adulti</Label>
-                         <input
-                           id="adulti"
-                           type="number"
-                           min="0"
-                           className="bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2 px-2 w-full text-base font-sans"
-                         />
-                       </div>
-                       <div className="flex-1">
-                         <Label htmlFor="bambini" className="font-sans text-xs text-muted-foreground mb-1 block">Bambini</Label>
-                         <input
-                           id="bambini"
-                           type="number"
-                           min="0"
-                           className="bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2 px-2 w-full text-base font-sans"
-                         />
-                       </div>
-                    </div>
-                    <div className="mt-6">
-                      <Label htmlFor="transfer" className="font-sans text-sm text-muted-foreground mb-2 block">È necessario un transfer?</Label>
-                      <Textarea
-                        id="transfer"
-                        className="resize-none bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2"
-                        rows={1}
+              {selectedOption === 'si' && (
+                <div className="mb-6 mt-4 text-left">
+                  <Label className="font-sans text-sm text-muted-foreground mb-2 block">
+                    Per quante persone confermi la partecipazione?
+                  </Label>
+                  <div className="flex gap-4">
+                    <div className="flex-1">
+                      <Label htmlFor="adulti" className="font-sans text-xs text-muted-foreground mb-1 block">Adulti</Label>
+                      <input
+                        id="adulti"
+                        type="number"
+                        min="0"
+                        value={adulti}
+                        onChange={(e) => setAdulti(parseInt(e.target.value) || 0)}
+                        className="bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2 px-2 w-full text-base font-sans"
                       />
                     </div>
-                    <div className="mt-6">
-                      <Label htmlFor="intolleranze" className="font-sans text-sm text-muted-foreground mb-2 block">Vuoi indicare eventuali intolleranze?</Label>
-                      <Textarea
-                        id="intolleranze"
-                        className="resize-none bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2"
-                        rows={1}
+                    <div className="flex-1">
+                      <Label htmlFor="bambini" className="font-sans text-xs text-muted-foreground mb-1 block">Bambini</Label>
+                      <input
+                        id="bambini"
+                        type="number"
+                        min="0"
+                        value={bambini}
+                        onChange={(e) => setBambini(parseInt(e.target.value) || 0)}
+                        className="bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2 px-2 w-full text-base font-sans"
                       />
                     </div>
                   </div>
-                )}
+                  <div className="mt-6">
+                    <Label htmlFor="transfer" className="font-sans text-sm text-muted-foreground mb-2 block">È necessario un transfer?</Label>
+                    <Textarea
+                      id="transfer"
+                      value={transfer}
+                      onChange={(e) => setTransfer(e.target.value)}
+                      className="resize-none bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2"
+                      rows={1}
+                    />
+                  </div>
+                  <div className="mt-6">
+                    <Label htmlFor="intolleranze" className="font-sans text-sm text-muted-foreground mb-2 block">Vuoi indicare eventuali intolleranze?</Label>
+                    <Textarea
+                      id="intolleranze"
+                      value={intolleranze}
+                      onChange={(e) => setIntolleranze(e.target.value)}
+                      className="resize-none bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2"
+                      rows={1}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
             <Button
               size="lg"
+              onClick={handleInviaRisposta}
               className="bg-sage hover:bg-sage/90 text-white font-sans tracking-wider py-6 text-base w-full max-w-full"
             >
               Invia la tua risposta
