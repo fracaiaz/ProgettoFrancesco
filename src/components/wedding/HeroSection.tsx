@@ -13,7 +13,17 @@ const HeroSection = () => {
     return (
         <>
         {/* Prima sezione - Solo titolo e data con video di sfondo */}
-        <section className="relative min-h-screen h-screen flex flex-col items-center justify-center px-6 overflow-hidden" style={{ height: '100dvh', minHeight: '100dvh' }}>
+        <section 
+            className="relative flex flex-col items-center justify-center px-6 overflow-hidden" 
+            style={{ 
+                height: '100vh',
+                minHeight: '100vh',
+                paddingTop: 'env(safe-area-inset-top)',
+                paddingBottom: 'env(safe-area-inset-bottom)',
+                marginTop: 'calc(-1 * env(safe-area-inset-top))',
+                marginBottom: 'calc(-1 * env(safe-area-inset-bottom))'
+            }}
+        >
             {/* Video di sfondo */}
             <video
                 autoPlay
@@ -21,14 +31,29 @@ const HeroSection = () => {
                 muted
                 playsInline
                 preload="auto"
-                className="absolute top-0 left-0 w-full h-full object-cover scale-110"
-                style={{ width: '100%', height: '120%', objectFit: 'cover' }}
+                className="absolute w-full h-full object-cover"
+                style={{ 
+                    top: 'calc(-1 * env(safe-area-inset-top))',
+                    left: 0,
+                    width: '100vw',
+                    height: 'calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom))',
+                    objectFit: 'cover'
+                }}
             >
                 <source src="/mare.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay scuro per leggibilità */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div 
+                className="absolute bg-black/40"
+                style={{
+                    top: 'calc(-1 * env(safe-area-inset-top))',
+                    left: 0,
+                    right: 0,
+                    bottom: 'calc(-1 * env(safe-area-inset-bottom))',
+                    height: 'calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom))'
+                }}
+            ></div>
 
             {/* Main content */}
             <motion.div
