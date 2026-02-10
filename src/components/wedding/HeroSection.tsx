@@ -6,9 +6,7 @@ const HeroSection = () => {
             className="relative flex flex-col items-center justify-center px-6 overflow-hidden" 
             style={{ 
                 height: '100dvh',
-                minHeight: '100dvh',
-                paddingTop: 'env(safe-area-inset-top)',
-                paddingBottom: 'env(safe-area-inset-bottom)'
+                minHeight: '100dvh'
             }}
         >
             {/* Video di sfondo */}
@@ -20,11 +18,10 @@ const HeroSection = () => {
                 preload="auto"
                 className="absolute w-full h-full object-cover"
                 style={{
-                    top: 'calc(-1 * env(safe-area-inset-top))',
+                    top: 0,
                     left: 0,
-                    right: 0,
-                    bottom: 'calc(-1 * env(safe-area-inset-bottom))',
-                    height: 'calc(100dvh + env(safe-area-inset-top) + env(safe-area-inset-bottom))'
+                    width: '100%',
+                    height: '100%'
                 }}
             >
                 <source src="/mare.mp4" type="video/mp4" />
