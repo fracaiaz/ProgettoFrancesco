@@ -15,7 +15,7 @@ const GiftsSection = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <section className="py-12 px-6 paper-texture">
+    <section className="pt-12 pb-6 px-6 paper-texture">
       <motion.div
         className="max-w-md mx-auto text-center"
         layout
@@ -41,9 +41,12 @@ const GiftsSection = () => {
             }
           }}
         >
-          <div className="w-24 h-24 rounded-full overflow-hidden relative">
+          <div className="w-48 h-48 rounded-full overflow-hidden relative">
             <img src={tastoRegalo} alt="Regalo" className="absolute inset-0 w-full h-full object-cover" />
           </div>
+          <p className="text-xs sm:text-sm text-muted-foreground font-sans mb-3">
+            Clicca sul regalo
+          </p>
         </motion.div>
 
 
