@@ -27,11 +27,11 @@ const ConfermaPartecipazione = () => {
       return;
     }
 
-    let messaggio = "CONFERMA PARTECIPAZIONE MATRIMONIO*%0A%0A";
-    messaggio += `Cari Annamaria&Agostino, sono ${encodeURIComponent(nome)}%0A%0A`;
+    let messaggio = "CONFERMA PARTECIPAZIONE MATRIMONIO%0A%0A";
+    messaggio += `Cari Annamaria e Agostino, sono ${encodeURIComponent(nome)}%0A`;
 
     if (selectedOption === 'si') {
-      messaggio += 'Volevo dirvi che sarò al vostro matrimonio!%0A%0A';
+      messaggio += 'Volevo dirvi che parteciperò al vostro matrimonio!%0A';
 
       const numAdulti = parseInt(adulti) || 0;
       const numBambini = parseInt(bambini) || 0;
@@ -46,12 +46,12 @@ const ConfermaPartecipazione = () => {
       }
 
       if (intolleranze.trim() || transfer.trim()) {
-        messaggio += "Inoltre, volevo comunicarvi le seguenti informazioni:%0A%0A";
+        messaggio += "Inoltre, volevo comunicarvi le seguenti informazioni:%0A";
         if (transfer.trim()) {
-          messaggio += `Per quanto riguarda la necessità di un transfer: ${encodeURIComponent(transfer)}%0A%0A`;
+          messaggio += `Per quanto riguarda la necessità di un transfer: ${encodeURIComponent(transfer)}%0A`;
         }
         if (intolleranze.trim()) {
-          messaggio += `Per quanto riguarda eventuali intolleranze alimentari: ${encodeURIComponent(intolleranze)}%0A%0A`;
+          messaggio += `Per quanto riguarda eventuali intolleranze alimentari: ${encodeURIComponent(intolleranze)}%0A`;
         }
       }
     } else {
