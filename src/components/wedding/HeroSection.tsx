@@ -3,37 +3,35 @@ import { motion } from "framer-motion";
 const HeroSection = () => {
     return (
         <section
-            className="relative flex flex-col items-center justify-center px-6 overflow-hidden"
+            className="relative flex flex-col items-center justify-center overflow-hidden"
             style={{
-                top: 0,
-                left: 0,
-                width: '100vw',
-                height: '100dvh' /* Dynamic viewport height */
+                width: "100vw",
+                height: "100dvh",
             }}
         >
             {/* Video di sfondo */}
-            < video
+            <video
                 autoPlay
                 loop
                 muted
                 playsInline
                 preload="auto"
-                className="absolute w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
                 style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
                 }}
             >
                 <source src="/mare.mp4" type="video/mp4" />
-            </video >
+            </video>
 
             {/* Overlay scuro per leggibilità */}
-            < div className="absolute inset-0 bg-black/40" ></div >
+            <div className="absolute inset-0 bg-black/40" />
 
             {/* Main content */}
-            < motion.div
-                className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
+            <motion.div
+                className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center px-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
@@ -73,8 +71,8 @@ const HeroSection = () => {
                         <span className="h-px w-12 bg-white/70"></span>
                     </div>
                 </motion.div>
-            </motion.div >
-        </section >
+            </motion.div>
+        </section>
     );
 };
 
