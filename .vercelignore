@@ -22,7 +22,6 @@ node_modules/
 *.mp3
 *.mpeg
 *.wav
-*.mp4
 
 # Exclude large PNG files (we use optimized webp versions)
 src/assets/chiesa.png
