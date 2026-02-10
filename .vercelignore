@@ -1,0 +1,29 @@
+# Vercel upload ignore
+# Exclude local dependency directories and large binary artifacts
+node_modules/
+.vite/
+imagemagick/
+libwebp/
+libwebp.zip
+*.zip
+*.log
+.vscode/
+.DS_Store
+dist/
+build/
+/.git/# Exclude large audio files
+public/audio/
+public/audio/**
+
+# Node modules (should be ignored by default but adding explicitly)
+node_modules/
+
+# Optional: exclude other large assets
+*.mp3
+*.mpeg
+*.wav
+
+# Exclude image and font folders
+src/assets/
+public/fonts/
+public/images/
