@@ -8,36 +8,39 @@ import { useState } from "react";
 const ConfermaPartecipazione = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [nome, setNome] = useState("");
-  const [adulti, setAdulti] = useState<number>(0);
-  const [bambini, setBambini] = useState<number>(0);
+  const [adulti, setAdulti] = useState<string>("");
+  const [bambini, setBambini] = useState<string>("");
   const [transfer, setTransfer] = useState("");
   const [intolleranze, setIntolleranze] = useState("");
 
   // Inserisci qui il numero di telefono in formato internazionale (es: 393331234567)
-  const numeroWhatsApp = "393932169648";
+  const numeroWhatsApp = "393666706480";
 
   const handleInviaRisposta = () => {
     if (!nome.trim()) {
-      alert("Per favore, inserisci il tuo nome");
+      alert("Inserisci il tuo nome");
       return;
     }
 
     if (!selectedOption) {
-      alert("Per favore, seleziona se potrai partecipare");
+      alert("Seleziona se potrai partecipare");
       return;
     }
 
     let messaggio = "CONFERMA PARTECIPAZIONE MATRIMONIO*%0A%0A";
-    messaggio += "Cari Annamaria&Agostino, sono ${encodeURIComponent(nome)}%0A%0A";
+    messaggio += `Cari Annamaria&Agostino, sono ${encodeURIComponent(nome)}%0A%0A`;
 
     if (selectedOption === 'si') {
       messaggio += 'Volevo dirvi che sarò al vostro matrimonio!%0A%0A';
 
-      if (adulti > 1 && bambini > 1) {
-        messaggio += 'Saremo in totale ${adulti} adulti e ${bambini} bambini.%0A%0A';
+      const numAdulti = parseInt(adulti) || 0;
+      const numBambini = parseInt(bambini) || 0;
+
+      if (numAdulti > 1 && numBambini > 1) {
+        messaggio += `Saremo in totale ${numAdulti} adulti e ${numBambini} bambini.%0A%0A`;
       }
-      else if (adulti == 1 && bambini > 0) {
-        messaggio += 'Saremo in totale 1 adulto e ${bambini} bambini.%0A%0A';
+      else if (numAdulti == 1 && numBambini > 0) {
+        messaggio += `Saremo in totale 1 adulto e ${numBambini} bambini.%0A%0A`;
       } else {
         messaggio += "Per l'occasione sarò da solo.%0A%0A";
       }
@@ -132,7 +135,7 @@ const ConfermaPartecipazione = () => {
                         type="number"
                         min="0"
                         value={adulti}
-                        onChange={(e) => setAdulti(parseInt(e.target.value) || 0)}
+                        onChange={(e) => setAdulti(e.target.value)}
                         className="bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2 px-2 w-full text-base font-sans"
                       />
                     </div>
@@ -143,7 +146,7 @@ const ConfermaPartecipazione = () => {
                         type="number"
                         min="0"
                         value={bambini}
-                        onChange={(e) => setBambini(parseInt(e.target.value) || 0)}
+                        onChange={(e) => setBambini(e.target.value)}
                         className="bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2 px-2 w-full text-base font-sans"
                       />
                     </div>
