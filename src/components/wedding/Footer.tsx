@@ -13,20 +13,18 @@ const Footer = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="flex items-center justify-center gap-2">
-          <span className="h-px w-8 bg-border" />
           <img
             src={mainLogo}
             alt="Annamaria & Agostino"
             className="w-64 h-auto mx-auto object-contain"
           />
-        <span className="h-px w-8 bg-border" />
         </div>
 
-        <p className="font-serif text-2xl text-foreground mb-2">
+        {/* <p className="font-serif text-2xl text-foreground mb-2">
           Annamaria
           <span className="text-gold"> & </span>Agostino
-        </p>
-        <p className="font-sans text-sm text-muted-foreground">
+        </p> */}
+        <p className="font-sans text-sm text-muted-foreground -mt-4">
           29 Giugno 2026
         </p>
 

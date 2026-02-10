@@ -32,7 +32,7 @@ const GiftsSection = () => {
           initial={{ scale: 0, rotate: -10 }}
           whileInView={{ scale: 1, rotate: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 1, type: "spring", stiffness: 200 }}
+          transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
           onClick={() => setShowDetails((v) => !v)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
