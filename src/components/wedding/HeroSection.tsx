@@ -13,7 +13,7 @@ const HeroSection = () => {
     return (
         <>
         {/* Prima sezione - Solo titolo e data con video di sfondo */}
-        <section className="relative w-full flex flex-col items-center justify-center px-6 overflow-hidden" style={{ height: '100svh', minHeight: '-webkit-fill-available' }}>
+        <section className="relative min-h-screen h-screen flex flex-col items-center justify-center px-6 overflow-hidden" style={{ height: '100dvh', minHeight: '100dvh' }}>
             {/* Video di sfondo */}
             <video
                 autoPlay
@@ -21,21 +21,14 @@ const HeroSection = () => {
                 muted
                 playsInline
                 preload="auto"
-                className="fixed top-0 left-0 min-w-full min-h-full w-auto h-auto"
-                style={{ 
-                    width: '100vw', 
-                    height: '100vh',
-                    minHeight: '100vh',
-                    minWidth: '100vw',
-                    objectFit: 'cover',
-                    transform: 'scale(1.2)'
-                }}
+                className="absolute top-0 left-0 w-full h-full object-cover scale-110"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             >
                 <source src="/mare.mp4" type="video/mp4" />
             </video>
             
             {/* Overlay scuro per leggibilità */}
-            <div className="fixed inset-0 bg-black/40" style={{ width: '100vw', height: '100vh' }}></div>
+            <div className="absolute inset-0 bg-black/40"></div>
 
             {/* Main content */}
             <motion.div
