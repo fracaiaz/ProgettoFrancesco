@@ -22,7 +22,7 @@ const HeroSection = () => {
                 playsInline
                 preload="auto"
                 className="absolute top-0 left-0 w-full h-full object-cover scale-110"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '120%', objectFit: 'cover' }}
             >
                 <source src="/mare.mp4" type="video/mp4" />
             </video>
