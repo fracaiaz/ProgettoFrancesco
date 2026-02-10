@@ -17,11 +17,7 @@ const HeroSection = () => {
             className="relative flex flex-col items-center justify-center px-6 overflow-hidden" 
             style={{ 
                 height: '100vh',
-                minHeight: '100vh',
-                paddingTop: 'env(safe-area-inset-top)',
-                paddingBottom: 'env(safe-area-inset-bottom)',
-                marginTop: 'calc(-1 * env(safe-area-inset-top))',
-                marginBottom: 'calc(-1 * env(safe-area-inset-bottom))'
+                minHeight: '100vh'
             }}
         >
             {/* Video di sfondo */}
@@ -31,13 +27,15 @@ const HeroSection = () => {
                 muted
                 playsInline
                 preload="auto"
-                className="absolute w-full h-full object-cover"
+                className="fixed top-0 left-0 w-screen h-screen object-cover"
                 style={{ 
-                    top: 'calc(-1 * env(safe-area-inset-top))',
-                    left: 0,
                     width: '100vw',
-                    height: 'calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom))',
-                    objectFit: 'cover'
+                    height: '100vh',
+                    minWidth: '100%',
+                    minHeight: '100%',
+                    objectFit: 'cover',
+                    transform: 'scale(1.15)',
+                    zIndex: -1
                 }}
             >
                 <source src="/mare.mp4" type="video/mp4" />
@@ -45,19 +43,14 @@ const HeroSection = () => {
             
             {/* Overlay scuro per leggibilità */}
             <div 
-                className="absolute bg-black/40"
-                style={{
-                    top: 'calc(-1 * env(safe-area-inset-top))',
-                    left: 0,
-                    right: 0,
-                    bottom: 'calc(-1 * env(safe-area-inset-bottom))',
-                    height: 'calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom))'
-                }}
+                className="fixed inset-0 bg-black/40"
+                style={{ zIndex: 0 }}
             ></div>
 
             {/* Main content */}
             <motion.div
-                className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
+                className="relative text-center w-full max-w-4xl mx-auto flex flex-col items-center"
+                style={{ zIndex: 10 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
