@@ -70,27 +70,27 @@ const GiftsSection = () => {
             {showDetails && (
               <motion.div
                 key="gifts-inner"
-                initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -10, scale: 0.98 }}
-                transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8 }}
               >
                 <motion.h2
                   className="font-serif text-3xl md:text-4xl text-foreground mb-6"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8 }}
                 >
                   Regali
                 </motion.h2>
 
                 <motion.div
                   className="bg-card border border-border rounded-lg p-8 shadow-paper mb-8"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <Heart className="w-6 h-6 text-gold mx-auto mb-4" />
                   <p className="font-serif text-lg text-foreground mb-4 leading-relaxed">
