@@ -11,52 +11,78 @@ const HeroSection = () => {
 
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-start px-6 pt-16 md:pt-40 pb-20 overflow-hidden paper-texture">
-            {/* Decorative floral accents */}
-            {/* <motion.img
-        src={callaLilies}
-        alt=""
-        className="absolute top-0 right-0 w-32 md:w-48 opacity-30 -rotate-12 pointer-events-none"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 0.3, x: 0 }}
-        transition={{ duration: 1.2, delay: 0.3 }}
-      /> */}
+        <>
+        {/* Prima sezione - Solo titolo e data con video di sfondo */}
+        <section className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+            {/* Video di sfondo */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="absolute inset-0 w-full h-full object-cover"
+            >
+                <source src="/mare.mp4" type="video/mp4" />
+            </video>
+            
+            {/* Overlay scuro per leggibilità */}
+            <div className="absolute inset-0 bg-black/40"></div>
 
             {/* Main content */}
             <motion.div
                 className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
             >
-                <p className="text-sm tracking-[0.3em] text-muted-foreground uppercase mb-6 font-sans" style={{opacity: 1}}>Sei invitato al matrimonio di</p>
-                <motion.h1
-                    className="font-serif text-6xl md:text-8xl lg:text-9xl text-foreground tracking-wide leading-tight"
+                <motion.p 
+                    className="text-sm tracking-[0.3em] text-white uppercase mb-6 font-sans drop-shadow-lg"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
+                    transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
+                >
+                    Sei invitato al matrimonio di
+                </motion.p>
+                <motion.h1
+                    className="font-serif text-6xl md:text-8xl lg:text-9xl text-white tracking-wide leading-tight drop-shadow-2xl"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.5, duration: 1.8, ease: "easeOut" }}
                 >
                     <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem' }}>A</span>
                     <span style={{ fontFamily: 'Silenter, serif', fontSize: '4rem' }}>nnamaria</span><br />
-                    <span className="text-gold" style={{ fontFamily: 'Silenter, serif', fontSize: '3rem'}}>&</span><br />
+                    <span className="text-gold" style={{ fontFamily: 'Silenter, serif', fontSize: '3rem' }}>&</span><br />
                     <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem' }}>A</span>
                     <span style={{ fontFamily: 'Silenter, serif', fontSize: '4rem' }}>gostino</span>
                 </motion.h1>
 
                 <motion.div
-                    className="mb-16"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.9, duration: 0.6 }}
+                    className="mb-0"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 3.0, duration: 1.5, ease: "easeOut" }}
                 >
                     <div className="flex items-center justify-center gap-4">
-                        <span className="h-px w-12 bg-border"></span>
-                        <p className="font-serif text-xl md:text-2xl text-muted-foreground tracking-widest">
+                        <span className="h-px w-12 bg-white/70"></span>
+                        <p className="font-serif text-xl md:text-2xl text-white tracking-widest drop-shadow-lg">
                             29.06.2026
                         </p>
-                        <span className="h-px w-12 bg-border"></span>
+                        <span className="h-px w-12 bg-white/70"></span>
                     </div>
                 </motion.div>
+            </motion.div>
+        </section>
+
+        {/* Seconda sezione - Busta e Audio Player */}
+        <section className="relative min-h-screen flex flex-col items-center justify-start px-6 pt-20 pb-20 overflow-hidden paper-texture">
+            <motion.div
+                className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+            >
 
                 {/* Envelope Section */}
                 <div id="busta" className="relative z-20 mt-8 mb-20 cursor-pointer" style={{ paddingTop: '3vh' }} onClick={() => setIsOpen((prev) => !prev)}>
@@ -335,6 +361,7 @@ const HeroSection = () => {
 
             </motion.div>
         </section>
+        </>
     );
 };
 
