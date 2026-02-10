@@ -2,6 +2,7 @@ import HeroSection from "@/components/wedding/HeroSection";
 import InteractiveEnvelope from "@/components/wedding/InteractiveEnvelope";
 import RSVPInfo from "@/components/wedding/RSVPInfo";
 import FormalInvitation from "@/components/wedding/FormalInvitation";
+import EnvelopeSection from "@/components/wedding/EnvelopeSection";
 import Itinerary from "@/components/wedding/Itinerary";
 import DressCode from "@/components/wedding/DressCode";
 import GiftsSection from "@/components/wedding/GiftsSection";
@@ -16,6 +17,9 @@ const Index = () => {
 
       <section id="invitation">
         <FormalInvitation />
+      </section>
+      <section id="envelope">
+        <EnvelopeSection />
       </section>
       <section id="itinerary">
         <Itinerary />
