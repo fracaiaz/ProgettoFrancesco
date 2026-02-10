@@ -81,7 +81,7 @@ const HeroSection = () => {
         </section>
 
         {/* Seconda sezione - Busta e Audio Player */}
-        <section className="relative min-h-screen flex flex-col items-center justify-start px-6 pt-20 pb-20 overflow-hidden paper-texture">
+        <section className="relative flex flex-col items-center justify-start px-6 pt-20 pb-0 overflow-hidden paper-texture">
             <motion.div
                 className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
                 initial={{ opacity: 0, y: 30 }}
@@ -97,7 +97,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 1.2 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         {/* Envelope container */}
                         <div className="relative w-72 xs:w-80 sm:w-96 md:w-[28rem] h-48 xs:h-52 sm:h-60 md:h-64 mx-auto">
@@ -363,7 +363,14 @@ const HeroSection = () => {
                     </motion.div>
                 </div>
 
-                <AudioPlayer className="w-full px-0 py-6 mt-8" />
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                    <AudioPlayer className="w-full px-0 py-6 mt-8" />
+                </motion.div>
 
             </motion.div>
         </section>
