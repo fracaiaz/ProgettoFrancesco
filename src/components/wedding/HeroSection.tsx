@@ -13,7 +13,7 @@ const HeroSection = () => {
     return (
         <>
         {/* Prima sezione - Solo titolo e data con video di sfondo */}
-        <section className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+        <section className="relative min-h-screen h-screen flex flex-col items-center justify-center px-6 overflow-hidden" style={{ height: '100dvh', minHeight: '100dvh' }}>
             {/* Video di sfondo */}
             <video
                 autoPlay
@@ -21,7 +21,8 @@ const HeroSection = () => {
                 muted
                 playsInline
                 preload="auto"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute top-0 left-0 w-full h-full object-cover scale-110"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             >
                 <source src="/mare.mp4" type="video/mp4" />
             </video>
@@ -50,11 +51,11 @@ const HeroSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5, duration: 1.8, ease: "easeOut" }}
                 >
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem' }}>A</span>
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '4rem' }}>nnamaria</span><br />
-                    <span className="text-gold" style={{ fontFamily: 'Silenter, serif', fontSize: '3rem' }}>&</span><br />
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem' }}>A</span>
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '4rem' }}>gostino</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '350' }}>A</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '4rem', fontWeight: '350' }}>nnamaria</span><br />
+                    <span className="text-gold" style={{ fontFamily: 'Silenter, serif', fontSize: '3rem', fontWeight: '350' }}>&</span><br />
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '350' }}>A</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '4rem', fontWeight: '350' }}>gostino</span>
                 </motion.h1>
 
                 <motion.div
