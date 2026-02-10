@@ -44,9 +44,18 @@ const GiftsSection = () => {
           <div className="w-48 h-48 rounded-full overflow-hidden relative">
             <img src={tastoRegalo} alt="Regalo" className="absolute inset-0 w-full h-full object-cover" />
           </div>
-          <p className="text-xs sm:text-sm text-muted-foreground font-sans mb-3">
-            Clicca sul regalo
-          </p>
+          <AnimatePresence>
+            {!showDetails && (
+              <motion.p
+                className="text-xs sm:text-sm text-muted-foreground font-sans mb-3"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { delay: 0.7, duration: 0.3 } }}
+                exit={{ opacity: 0, transition: { duration: 0.2 } }}
+              >
+                Clicca sul regalo
+              </motion.p>
+            )}
+          </AnimatePresence>
         </motion.div>
 
 

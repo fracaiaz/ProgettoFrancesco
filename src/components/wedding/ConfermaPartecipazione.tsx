@@ -11,10 +11,11 @@ const ConfermaPartecipazione = () => {
     <section className="py-20 px-6 paper-texture">
       <motion.div
         className="max-w-md mx-auto text-center"
+        layout
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.8, layout: { duration: 0.7, ease: [0.4, 0, 0.2, 1] } }}
       >
         <motion.div
           className="bg-card border border-border rounded-lg p-5 shadow-paper"

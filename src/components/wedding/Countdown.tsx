@@ -11,7 +11,7 @@ interface TimeLeft {
 
 const calculateTimeLeft = (targetDate: Date): TimeLeft => {
   const difference = targetDate.getTime() - new Date().getTime();
-  
+
   if (difference <= 0) {
     return { days: 0, hours: 0, minutes: 0 };
   }
@@ -45,13 +45,13 @@ const Countdown = () => {
     <section id="countdown" className="relative py-24 px-6 paper-texture overflow-hidden">
       {/* Background image */}
       <div className="absolute -top-20 left-0 right-0 flex justify-center pointer-events-none">
-        <img 
+        <img
           src={calle}
           alt=""
           className="w-auto max-w-full opacity-50 mix-blend-darken"
         />
       </div>
-      
+
       {/* Decorative florals */}
       {/* <motion.img
         src={callaLilies}
@@ -79,16 +79,6 @@ const Countdown = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <motion.p
-          className="text-sm tracking-[0.2em] text-muted-foreground uppercase mb-3 font-sans"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-        >
-          Countdown
-        </motion.p>
-        
         <motion.h2
           className="font-serif text-3xl md:text-4xl text-foreground mb-10"
           initial={{ opacity: 0 }}
