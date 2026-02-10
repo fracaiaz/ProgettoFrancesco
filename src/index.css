@@ -121,6 +121,10 @@
   html {
     scroll-behavior: smooth;
     font-size: 16px; /* Ensure minimum 16px for mobile readability */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100dvh;
   }
 
   body {
@@ -130,16 +134,14 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100dvh;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
-  }
-
-  /* Prevent horizontal scrolling on mobile */
-  body, html {
-    overflow-x: hidden;
-    max-width: 100vw;
   }
 
   /* Improve tap targets for mobile and prevent zoom */
