@@ -24,6 +24,6 @@ node_modules/
 *.wav
 
 # Exclude image and font folders
-src/assets/
-public/fonts/
-public/images/
+# src/assets/
+# public/fonts/
+# public/images/
