@@ -18,7 +18,8 @@ const Footer = () => {
         </div>
 
         <p className="font-serif text-2xl text-foreground mb-2">
-          Annamaria & Agostino
+          Annamaria 
+          <span className="text-gold"> & </span>Agostino
         </p>
         <p className="font-sans text-sm text-muted-foreground">
           29 Giugno 2026
