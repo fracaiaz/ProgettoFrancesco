@@ -34,7 +34,7 @@ const AudioPlayer = ({ className }: AudioPlayerProps) => {
       />
 
       <motion.div
-        className="max-w-md mx-auto flex items-center gap-4 p-4 rounded-lg"
+        className="max-w-md mx-auto flex items-center gap-4 rounded-lg"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.6 }}
@@ -55,7 +55,7 @@ const AudioPlayer = ({ className }: AudioPlayerProps) => {
         {/* Text and visualizer */}
         <div className="flex-1 min-w-0 flex items-center justify-center">
           <div className="flex items-center gap-2">
-            <p className="text-xs text-muted-foreground uppercase font-serif" style={{ fontSize: "0.8rem" }}>
+            <p className="text-xs text-muted-foreground uppercase font-serif" style={{ fontSize: "0.9rem" }}>
               Ascolta la nostra canzone
             </p>
           </div>
