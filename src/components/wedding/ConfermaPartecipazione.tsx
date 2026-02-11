@@ -68,14 +68,14 @@ const ConfermaPartecipazione = () => {
         className="max-w-md mx-auto text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.8 }}
       >
         <motion.div
           className="bg-card border border-border rounded-lg p-5 shadow-paper"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           <div className="border-[3px] border-gold rounded-xl p-6">
@@ -83,7 +83,7 @@ const ConfermaPartecipazione = () => {
               className="font-serif text-2xl sm:text-3xl md:text-4xl tracking-[0.15em] text-foreground mb-6 text-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -15% 0px" }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               CONFERMA PARTECIPAZIONE

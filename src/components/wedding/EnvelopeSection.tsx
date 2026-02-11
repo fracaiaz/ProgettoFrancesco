@@ -13,7 +13,7 @@ const EnvelopeSection = () => {
                 className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -15% 0px" }}
                 transition={{ duration: 0.8 }}
             >
 
@@ -23,7 +23,7 @@ const EnvelopeSection = () => {
                         className="relative mx-auto"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         {/* Envelope container */}
@@ -293,7 +293,7 @@ const EnvelopeSection = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "0px 0px -15% 0px" }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
                     <AudioPlayer className="w-full px-0 py-6 mt-8" />

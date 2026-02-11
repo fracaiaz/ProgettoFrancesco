@@ -12,7 +12,7 @@ const InteractiveEnvelope = () => {
         className="text-sm tracking-[0.2em] text-muted-foreground uppercase mb-8 text-center font-sans"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.6 }}
       >
         Tocca la busta per aprirla
@@ -25,7 +25,7 @@ const InteractiveEnvelope = () => {
         whileTap={{ scale: 0.98 }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.8 }}
       >
         {/* Envelope container */}

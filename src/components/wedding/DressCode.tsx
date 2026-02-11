@@ -9,14 +9,14 @@ const DressCode = () => {
         className="max-w-md mx-auto text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.6 }}
       >
         <motion.p
           className="text-sm tracking-[0.2em] text-muted-foreground uppercase mb-3 font-sans"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
           Dress code
@@ -26,7 +26,7 @@ const DressCode = () => {
           className="font-serif text-3xl md:text-4xl text-foreground mb-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           Sea <span className="text-gold italic">&</span> Sand
@@ -38,7 +38,7 @@ const DressCode = () => {
           className="bg-card border border-border rounded-lg p-8 shadow-paper relative"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           <p className="text-sm text-muted-foreground font-sans">

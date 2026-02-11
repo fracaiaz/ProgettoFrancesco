@@ -59,7 +59,7 @@ const Countdown = () => {
         className="absolute top-0 left-0 w-24 md:w-32 opacity-20 -rotate-45 -translate-x-1/4 -translate-y-1/4 pointer-events-none"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.2 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 1 }}
       />
       <motion.img
@@ -68,7 +68,7 @@ const Countdown = () => {
         className="absolute bottom-0 right-0 w-24 md:w-32 opacity-20 rotate-135 translate-x-1/4 translate-y-1/4 pointer-events-none"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.2 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 1 }}
       /> */}
 
@@ -76,14 +76,14 @@ const Countdown = () => {
         className="max-w-lg mx-auto text-center relative z-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.6 }}
       >
         <motion.h2
           className="font-serif text-3xl md:text-4xl text-foreground mb-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           Mancano
@@ -93,7 +93,7 @@ const Countdown = () => {
           className="flex items-center justify-center gap-1 xs:gap-2 sm:gap-4 md:gap-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           {timeBlocks.map((block, index) => (
@@ -126,7 +126,7 @@ const Countdown = () => {
           className="mt-10 font-serif text-xl text-muted-foreground italic"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
           Vi aspettiamo!

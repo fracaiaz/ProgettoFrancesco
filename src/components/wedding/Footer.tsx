@@ -9,7 +9,7 @@ const Footer = () => {
         className="max-w-md mx-auto text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.6 }}
       >
         <div className="flex items-center justify-center gap-2">

@@ -18,14 +18,14 @@ const RSVPInfo = ({
         className="max-w-md mx-auto text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.6 }}
       >
         <motion.div
           className="inline-block mb-6"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
         >
           <div className="w-16 h-16 rounded-full bg-sage-light flex items-center justify-center">
@@ -45,7 +45,7 @@ const RSVPInfo = ({
           className="bg-card border border-border rounded-lg p-6 shadow-paper"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           <p className="font-sans text-foreground leading-relaxed">

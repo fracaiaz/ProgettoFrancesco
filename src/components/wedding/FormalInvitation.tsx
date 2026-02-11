@@ -8,7 +8,7 @@ const FormalInvitation = () => {
         className="max-w-lg mx-auto relative"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.7 }}
       >
         {/* Invitation card */}
@@ -24,7 +24,7 @@ const FormalInvitation = () => {
             className="my-8"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <p className="text-sm tracking-[0.2em] text-sage uppercase mb-3 font-sans text-center">
@@ -44,7 +44,7 @@ const FormalInvitation = () => {
             className="space-y-1 text-muted-foreground font-sans text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
             <p>Lunedì 29 Giugno 2026</p>

@@ -21,7 +21,7 @@ const GiftsSection = () => {
         layout
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
         transition={{ duration: 0.6, layout: { duration: 0.5, ease: "easeInOut" } }}
       >
         <motion.div
@@ -31,7 +31,7 @@ const GiftsSection = () => {
           className="inline-block mb-6 cursor-pointer"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ delay: 0.4, type: "spring", stiffness: 150 }}
           onClick={() => setShowDetails((v) => !v)}
           onKeyDown={(e) => {
