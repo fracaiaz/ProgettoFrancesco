@@ -32,55 +32,53 @@ const AudioPlayer = ({ className }: AudioPlayerProps) => {
         loop
         onEnded={() => setIsPlaying(false)}
       />
-      
+
       <motion.div
-        className="max-w-md mx-auto"
+        className="max-w-md mx-auto flex items-center gap-4 p-4 rounded-lg"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.6 }}
       >
-        <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg shadow-paper">
-          {/* Play/Pause Button */}
-          <motion.button
-            onClick={togglePlay}
-            className="flex-shrink-0 w-12 h-12 rounded-full bg-foreground text-background flex items-center justify-center shadow-md"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {isPlaying ? (
-              <Pause className="w-5 h-5" />
-            ) : (
-              <Play className="w-5 h-5 ml-0.5" />
-            )}
-          </motion.button>
+        <motion.button
+          onClick={togglePlay}
+          className="flex-shrink-0 w-12 h-12 rounded-full bg-foreground text-background flex items-center justify-center shadow-md"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {isPlaying ? (
+            <Pause className="w-5 h-5" />
+          ) : (
+            <Play className="w-5 h-5 ml-0.5" />
+          )}
+        </motion.button>
 
-          {/* Text and visualizer */}
-          <div className="flex-1 min-w-0 flex items-center justify-center">
-            <div className="flex items-center gap-2">
-              <p className="text-xs text-muted-foreground uppercase tracking-wider font-sans">
-                Ascolta la nostra canzone
-              </p>
-            </div>
+        {/* Text and visualizer */}
+        <div className="flex-1 min-w-0 flex items-center justify-center">
+          <div className="flex items-center gap-2">
+            <p className="text-xs text-muted-foreground uppercase font-serif" style={{ fontSize: "0.8rem" }}>
+              Ascolta la nostra canzone
+            </p>
           </div>
+        </div>
 
-          {/* Sound wave animation */}
-          <div className="flex items-center gap-0.5 h-8">
-            {[...Array(5)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="w-1 bg-sage rounded-full"
-                animate={{
-                  height: isPlaying ? [8, 20, 12, 24, 8] : 8,
-                }}
-                transition={{
-                  duration: 0.8,
-                  repeat: isPlaying ? Infinity : 0,
-                  delay: i * 0.1,
-                  ease: "easeInOut",
-                }}
-              />
-            ))}
-          </div>
+        {/* Sound wave animation */}
+        <div className="flex items-center gap-0.5 h-8">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="rounded-full"
+              style={{ backgroundColor: "hsl(var(--gold))", height: [11, 25, 8, 16, 27, 10][i], width: "0.2rem" }}
+              animate={{
+                height: isPlaying ? [8, 16, 4, 20, 9, 15][i] : [11, 25, 8, 16, 27, 10][i],
+              }}
+              transition={{
+                duration: isPlaying ? 0.8 : 0,
+                repeat: isPlaying ? Infinity : 0,
+                delay: isPlaying ? i * 0.1 : 0,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
         </div>
       </motion.div>
     </section>

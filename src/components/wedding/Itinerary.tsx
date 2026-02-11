@@ -75,7 +75,7 @@ const Itinerary = () => {
           transition={{ delay: 0.2, duration: 0.7 }}
         >
           {/* Header */}
-          <div className="text-center mb-8 pb-8 border-b border-sage/20">
+          <div className="text-center mb-8 pb-8 border-b border-gold/20">
             <motion.h2
               className="font-serif text-2xl sm:text-3xl md:text-4xl tracking-[0.15em] text-foreground mb-2"
               initial={{ opacity: 0, y: 10 }}
@@ -108,7 +108,7 @@ const Itinerary = () => {
                 transition={{ delay: 0.4 + index * 0.15, duration: 0.5 }}
               >
                 {/* Icon */}
-                <div className="flex-shrink-0 w-24 flex items-center justify-center text-sage/70 self-start pt-1">
+                <div className="flex-shrink-0 w-24 flex items-center justify-center text-gold/70 self-start pt-1">
                   {event.icon}
                 </div>
 
@@ -135,7 +135,7 @@ const Itinerary = () => {
                       href={event.mapsLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-sans text-sage border border-sage/30 hover:border-sage hover:bg-sage/5 transition-all px-4 py-2 rounded-full"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-sans text-gold border border-gold/30 hover:border-gold hover:bg-gold/5 transition-all px-4 py-2 rounded-full"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -146,7 +146,7 @@ const Itinerary = () => {
                   {event.customAction && (
                     <motion.a
                       href={event.customAction.link}
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-sans text-sage border border-sage/30 hover:border-sage hover:bg-sage/5 transition-all px-4 py-2 rounded-full"
+                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-sans text-gold border border-gold/30 hover:border-gold hover:bg-gold/5 transition-all px-4 py-2 rounded-full"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >

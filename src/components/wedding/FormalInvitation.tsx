@@ -27,7 +27,7 @@ const FormalInvitation = () => {
             viewport={{ once: true, margin: "0px 0px -15% 0px" }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <p className="text-sm tracking-[0.2em] text-sage uppercase mb-3 font-sans text-center">
+            <p className="text-sm tracking-[0.2em] uppercase mb-3 font-serif text-center text-gold">
               Abbiamo l'onore di invitarti al matrimonio di
             </p>
             <div
@@ -41,7 +41,7 @@ const FormalInvitation = () => {
           </motion.div>
 
           <motion.div
-            className="space-y-1 text-muted-foreground font-sans text-sm"
+            className="space-y-1 text-muted-foreground font-serif text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "0px 0px -15% 0px" }}

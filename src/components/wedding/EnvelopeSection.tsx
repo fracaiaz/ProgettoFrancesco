@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import couplePolaroid from "@/assets/bikini.webp";
+import couplePolaroid from "@/assets/bikini_new.webp";
 import logo from "@/assets/logo.webp";
 import AudioPlayer from "@/components/wedding/AudioPlayer";
 
@@ -18,7 +18,7 @@ const EnvelopeSection = () => {
             >
 
                 {/* Envelope Section */}
-                <div id="busta" className="relative z-20 mt-20 mb-20 cursor-pointer" style={{ paddingTop: '3vh' }} onClick={() => setIsOpen((prev) => !prev)}>
+                <div id="busta" className="relative z-20 mt-20 cursor-pointer" style={{ paddingTop: '3vh' }} onClick={() => setIsOpen((prev) => !prev)}>
                     <motion.div
                         className="relative mx-auto"
                         initial={{ opacity: 0, y: 30 }}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import couplePolaroid from "@/assets/bikini.webp";
+import couplePolaroid from "@/assets/bikini_new.webp";
 import logo from "@/assets/logo.webp";
 
 const InteractiveEnvelope = () => {

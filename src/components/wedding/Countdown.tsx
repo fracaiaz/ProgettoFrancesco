@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-// import callaLilies from "@/assets/calla-lilies.png";
-import calle from "@/assets/calle.webp";
+import rose from "@/assets/rose.webp";
 
 interface TimeLeft {
   days: number;
@@ -42,35 +41,18 @@ const Countdown = () => {
   ];
 
   return (
+
     <section id="countdown" className="relative py-24 px-6 paper-texture overflow-hidden">
       {/* Background image */}
-      <div className="absolute -top-20 left-0 right-0 flex justify-center pointer-events-none">
-        <img
-          src={calle}
-          alt=""
-          className="w-auto max-w-full opacity-50 mix-blend-darken"
-        />
+      <div className="absolute -top-20 left-0 right-0 flex justify-center">
+        <div className="sfumatura-semplice">
+          <img
+            src={rose}
+            alt=""
+            className="w-auto max-w-full opacity-50 mix-blend-darken"
+          />
+        </div>
       </div>
-
-      {/* Decorative florals */}
-      {/* <motion.img
-        src={callaLilies}
-        alt=""
-        className="absolute top-0 left-0 w-24 md:w-32 opacity-20 -rotate-45 -translate-x-1/4 -translate-y-1/4 pointer-events-none"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.2 }}
-        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
-        transition={{ duration: 1 }}
-      />
-      <motion.img
-        src={callaLilies}
-        alt=""
-        className="absolute bottom-0 right-0 w-24 md:w-32 opacity-20 rotate-135 translate-x-1/4 translate-y-1/4 pointer-events-none"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.2 }}
-        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
-        transition={{ duration: 1 }}
-      /> */}
 
       <motion.div
         className="max-w-lg mx-auto text-center relative z-10"
@@ -80,7 +62,8 @@ const Countdown = () => {
         transition={{ duration: 0.6 }}
       >
         <motion.h2
-          className="font-serif text-3xl md:text-4xl text-foreground mb-10"
+          className="font-serif text-3xl md:text-4xl text-foreground"
+          style={{ marginBottom: '1em' }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "0px 0px -15% 0px" }}
