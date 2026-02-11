@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
     return (
-        <section
-            className="relative flex flex-col items-center justify-center overflow-hidden"
-            style={{
-                width: "100vw",
-                height: "100dvh",
+        <section 
+            className="relative flex flex-col items-center justify-center px-6 overflow-hidden" 
+            style={{ 
+                height: '100dvh',
+                minHeight: '100dvh'
             }}
         >
             {/* Video di sfondo */}
@@ -16,27 +16,28 @@ const HeroSection = () => {
                 muted
                 playsInline
                 preload="auto"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute w-full h-full object-cover"
                 style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%'
                 }}
             >
                 <source src="/mare.mp4" type="video/mp4" />
             </video>
-
+            
             {/* Overlay scuro per leggibilità */}
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/40"></div>
 
             {/* Main content */}
             <motion.div
-                className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center px-6"
+                className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
             >
-                <motion.p
+                <motion.p 
                     className="text-sm tracking-[0.3em] text-white uppercase mb-6 font-sans drop-shadow-lg"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
