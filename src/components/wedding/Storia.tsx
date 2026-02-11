@@ -12,15 +12,15 @@ const Storia = () => {
                 transition={{ duration: 0.7 }}
             >
                 {/* Contenuto storia */}
-                <div className="space-y-8">
+                <div>
                     <motion.div
-                        className="bg-card border border-border rounded-sm shadow-card p-8 md:p-12"
+                        className="bg-card border border-border rounded-sm shadow-card md:p-12"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "0px 0px -15% 0px" }}
                         transition={{ delay: 0.4, duration: 0.6 }}
                     >
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '-1em' }}>
+                        <div className='p-8' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '-3.5em' }}>
                             <span className="text-6xl md:text-7xl text-foreground" style={{ fontFamily: 'Silenter, serif' }}>
                                 La nostra
                             </span>
@@ -29,7 +29,7 @@ const Storia = () => {
                             <span className="text-3xl md:text-4xl text-gold font-serif mb-4">STORIA</span>
                         </div>
 
-                        <div className="space-y-6 text-foreground/80 font-serif" style={{ alignItems: 'center', justifyContent: 'center' }}>
+                        <div className="space-y-6 text-foreground/80 font-serif" style={{ alignItems: 'center', justifyContent: 'center', padding: '0.5em' }}>
                             <p className="text-center">Ci siamo fidanzati il <b>15 gennaio 2013</b>.<br/>                         
                             Eravamo due ragazzi: 15 e 18 anni, due cuori giovani e un po' incoscienti, come si è solo a quell'età.</p>
                             <p className="text-center">È stato un <b>colpo di fulmine</b>: l'incontro di due anime che, senza saperlo, si stavano già cercando.</p>
