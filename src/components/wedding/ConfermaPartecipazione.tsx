@@ -177,7 +177,7 @@ const ConfermaPartecipazione = () => {
             <Button
               size="lg"
               onClick={handleInviaRisposta}
-              className="bg-sage hover:bg-sage/90 text-white font-sans tracking-wider py-6 text-base w-full max-w-full"
+              className="bg-gold hover:bg-gold/90 text-white font-sans tracking-wider py-6 text-base w-full max-w-full"
             >
               Invia la tua risposta
             </Button>

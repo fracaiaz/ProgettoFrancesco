@@ -1,11 +1,29 @@
 import { motion } from "framer-motion";
 import { AlignCenter } from "lucide-react";
+import sfondoStoria from "@/assets/sfondo_storia.jpeg";
 
 const Storia = () => {
     return (
-        <section className="pt-10 pb-20 px-6 paper-texture mt-4">
+        <section className="py-20 px-6 paper-texture relative overflow-hidden -mt-2">
+            {/* Immagine di sfondo con dissolvenza */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div 
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: `url(${sfondoStoria})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                    }}
+                />
+                {/* Dissolvenza superiore */}
+                <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-[hsl(38_28%_94%)] via-[hsl(38_28%_94%/0.5)] to-transparent z-10"></div>
+                {/* Dissolvenza inferiore */}
+                <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-[hsl(38_28%_94%)] via-[hsl(38_28%_94%/0.5)] to-transparent z-10"></div>
+            </div>
+
             <motion.div
-                className="max-w-3xl mx-auto"
+                className="max-w-3xl mx-auto relative z-20"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "0px 0px -15% 0px" }}
@@ -29,7 +47,7 @@ const Storia = () => {
                             <span className="text-3xl md:text-4xl text-gold font-serif mb-4">STORIA</span>
                         </div>
 
-                        <div className="space-y-6 text-foreground/80 font-serif" style={{ alignItems: 'center', justifyContent: 'center', padding: '0.5em' }}>
+                        <div className="space-y-6 text-foreground/80 font-serif" style={{ alignItems: 'center', justifyContent: 'center', padding: '1.5em' }}>
                             <p className="text-center">Ci siamo fidanzati il <b>15 gennaio 2013</b>.<br/>                         
                             Eravamo due ragazzi: 15 e 18 anni, due cuori giovani e un po' incoscienti, come si è solo a quell'età.</p>
                             <p className="text-center">È stato un <b>colpo di fulmine</b>: l'incontro di due anime che, senza saperlo, si stavano già cercando.</p>

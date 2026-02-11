@@ -3,7 +3,7 @@ import { Paperclip } from "lucide-react";
 
 const FormalInvitation = () => {
   return (
-    <section className="pt-10 pb-20 px-6 paper-texture">
+    <section className="py-20 px-6 paper-texture -mt-2">
       <motion.div
         className="max-w-lg mx-auto relative"
         initial={{ opacity: 0, y: 30 }}

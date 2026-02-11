@@ -8,7 +8,7 @@ const EnvelopeSection = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <section className="relative flex flex-col items-center justify-start px-6 pt-20 pb-0 overflow-hidden paper-texture">
+        <section className="relative flex flex-col items-center justify-start px-6 pt-20 pb-20 overflow-hidden paper-texture">
             <motion.div
                 className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
                 initial={{ opacity: 0, y: 30 }}

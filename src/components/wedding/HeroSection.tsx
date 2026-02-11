@@ -30,6 +30,9 @@ const HeroSection = () => {
             {/* Overlay scuro per leggibilità */}
             <div className="absolute inset-0 bg-black/40"></div>
 
+            {/* Dissolvenza verso il basso */}
+            <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-transparent via-[hsl(38_28%_94%/0.5)] to-[hsl(38_28%_94%)] pointer-events-none z-5"></div>
+
             {/* Main content */}
             <motion.div
                 className="text-center z-10 w-full max-w-4xl mx-auto flex flex-col items-center"
