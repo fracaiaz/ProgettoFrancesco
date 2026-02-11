@@ -31,7 +31,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-black/40"></div>
 
             {/* Dissolvenza verso il basso */}
-            <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-transparent via-[hsl(38_28%_94%/0.5)] to-[hsl(38_28%_94%)] pointer-events-none z-5"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-[hsl(38_28%_94%/0.5)] to-[hsl(38_28%_94%)] pointer-events-none z-5"></div>
 
             {/* Main content */}
             <motion.div
