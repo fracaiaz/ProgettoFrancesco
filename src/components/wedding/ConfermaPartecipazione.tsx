@@ -66,11 +66,11 @@ const ConfermaPartecipazione = () => {
       } else if (pernottamento === "si") {
         messaggio += "%0APer quanto riguarda invece il pernottamento ti comunico di averne bisogno";
         if (servizioExtra === "estetista") {
-          messaggio += ` e di aver bisogno di una estetista.%0A`;
+          messaggio += ` e di necessitare di una estetista.%0A`;
         } else if (servizioExtra === "parrucchiera") {
-          messaggio += ` e di aver bisogno di una parrucchiera.%0A`;
+          messaggio += ` e di necessitare di una parrucchiera.%0A`;
         } else if (servizioExtra === "entrambe") {
-          messaggio += ` e di aver bisogno sia di una estetista che della parrucchiera.%0A`;
+          messaggio += ` e di necessitare sia di una estetista che della parrucchiera.%0A`;
         } else {
           messaggio += "%0A";
         }
