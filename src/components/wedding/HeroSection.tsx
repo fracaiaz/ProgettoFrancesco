@@ -46,11 +46,11 @@ const HeroSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5, duration: 1.8, ease: "easeOut" }}
                 >
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '6rem', fontWeight: '600' }}>A</span>
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '600' }}>nnamaria</span><br />
-                    <span className="text-gold" style={{ fontFamily: 'Silenter, serif', fontSize: '4rem', fontWeight: '600' }}>&</span><br />
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '6rem', fontWeight: '600' }}>A</span>
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '600' }}>gostino</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '6rem', fontWeight: '500', textRendering: 'optimizeLegibility', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>A</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '500', textRendering: 'optimizeLegibility', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale', letterSpacing: '0.005em' }}>nnamaria</span><br />
+                    <span className="text-gold" style={{ fontFamily: 'Silenter, serif', fontSize: '4rem', fontWeight: '500', textRendering: 'optimizeLegibility', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>&</span><br />
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '6rem', fontWeight: '500', textRendering: 'optimizeLegibility', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>A</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '500', textRendering: 'optimizeLegibility', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale', letterSpacing: '0.005em' }}>gostino</span>
                 </motion.h1>
             </motion.div>
         </section>
