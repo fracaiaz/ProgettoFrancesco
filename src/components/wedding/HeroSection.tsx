@@ -50,7 +50,7 @@ const HeroSection = () => {
                     <span style={{ fontFamily: 'Silenter', fontSize: '5rem', textRendering: 'optimizeLegibility', WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale', letterSpacing: '0.005em' }}>nnamaria</span><br /> */}
                     <span style={{
                         fontFamily: 'Silenter',
-                        fontSize: '5.9rem',
+                        fontSize: '5.7rem',
                         fontWeight: 400,
                         WebkitTextStroke: '0.5px #FFFFFF',
                         paintOrder: 'stroke fill',
@@ -63,7 +63,7 @@ const HeroSection = () => {
                     </span>
                     <span style={{
                         fontFamily: 'Silenter',
-                        fontSize: '5rem',
+                        fontSize: '4.8rem',
                         fontWeight: 400,
                         WebkitTextStroke: '0.5px #FFFFFF',
                         paintOrder: 'stroke fill',
@@ -90,7 +90,7 @@ const HeroSection = () => {
                     </span><br/>
                     <span style={{
                         fontFamily: 'Silenter',
-                        fontSize: '5.9rem',
+                        fontSize: '5.7rem',
                         fontWeight: 400,
                         WebkitTextStroke: '0.5px #FFFFFF',
                         paintOrder: 'stroke fill',
@@ -103,7 +103,7 @@ const HeroSection = () => {
                     </span>
                     <span style={{
                         fontFamily: 'Silenter',
-                        fontSize: '5rem',
+                        fontSize: '4.8rem',
                         fontWeight: 400,
                         WebkitTextStroke: '0.5px #FFFFFF',
                         paintOrder: 'stroke fill',
