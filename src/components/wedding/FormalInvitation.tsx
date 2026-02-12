@@ -34,9 +34,9 @@ const FormalInvitation = () => {
               className="font-serif text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground px-2 flex justify-center items-center"
               style={{ gap: '0.2em' }}
             >
-              <span>Annamaria</span>
-              <span className="text-gold text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl italic" style={{ alignSelf: 'flex-end' }}>&</span>
               <span>Agostino</span>
+              <span className="text-gold text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl italic" style={{ alignSelf: 'flex-end' }}>&</span>
+              <span>Annamaria</span>
             </div>
           </motion.div>
 

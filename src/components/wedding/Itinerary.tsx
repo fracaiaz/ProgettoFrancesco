@@ -9,7 +9,7 @@ const events = [
   {
     title: "Cerimonia",
     time: "17:00",
-    location: "Chiesa Madonna della Libera",
+    location: "Santuario Madonna della Libera",
     address: "Madonna della Libera n°2 | C.mare di Stabia (NA)",
     mapsLink: "https://maps.app.goo.gl/DR7fF6fvaN1DESpm8",
     icon: (

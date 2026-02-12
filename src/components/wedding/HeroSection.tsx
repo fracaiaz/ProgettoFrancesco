@@ -70,10 +70,9 @@ const HeroSection = () => {
                         display: 'inline-block',
                         textRendering: 'optimizeLegibility',
                         WebkitFontSmoothing: 'antialiased',
-                        MozOsxFontSmoothing: 'grayscale',
-                        letterSpacing: '0.005em'
+                        MozOsxFontSmoothing: 'grayscale'
                     }}>
-                        nnamaria
+                        gostino
                     </span><br/>
                     <span className="text-gold" style={{
                         fontFamily: 'Silenter',
@@ -111,8 +110,9 @@ const HeroSection = () => {
                         textRendering: 'optimizeLegibility',
                         WebkitFontSmoothing: 'antialiased',
                         MozOsxFontSmoothing: 'grayscale',
+                        letterSpacing: '0.005em'
                     }}>
-                        gostino
+                        nnamaria
                     </span>
 
                 </motion.h1>
