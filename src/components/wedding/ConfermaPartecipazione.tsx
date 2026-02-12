@@ -40,9 +40,12 @@ const ConfermaPartecipazione = () => {
 
       if (numAdulti > 1 && numBambini > 1) {
         messaggio += `Saremo in totale ${numAdulti} adulti e ${numBambini} bambini.%0A%0A`;
-      }
-      else if (numAdulti == 1 && numBambini > 0) {
+      } else if (numAdulti > 1 && numBambini == 1) {
+        messaggio += `Saremo in totale ${numAdulti} adulti e 1 bambino.%0A%0A`;
+      } else if (numAdulti == 1 && numBambini > 1) {
         messaggio += `Saremo in totale 1 adulto e ${numBambini} bambini.%0A%0A`;
+      } else if (numAdulti > 1) {
+        messaggio += `Saremo in totale ${numAdulti} adulti.%0A%0A`;
       } else {
         messaggio += "Per l'occasione sarò da solo.%0A%0A";
       }
