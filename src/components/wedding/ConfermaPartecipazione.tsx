@@ -48,29 +48,30 @@ const ConfermaPartecipazione = () => {
       }
 
       if (intolleranze.trim() || transfer.trim()) {
-        messaggio += "Inoltre, volevo comunicarvi le seguenti informazioni:%0A";
+        messaggio += "Volevo comunicarvi anche le seguenti informazioni:%0A";
         if (transfer.trim()) {
-          messaggio += `Per quanto riguarda la necessità di un transfer: ${encodeURIComponent(transfer)}%0A`;
+          messaggio += `- per quanto riguarda la necessità di un transfer: ${encodeURIComponent(transfer)}%0A`;
         }
         if (intolleranze.trim()) {
-          messaggio += `Per quanto riguarda eventuali intolleranze alimentari: ${encodeURIComponent(intolleranze)}%0A`;
+          messaggio += `- per quanto riguarda eventuali intolleranze alimentari: ${encodeURIComponent(intolleranze)}%0A`;
         }
       }
 
 
-      if (pernottamento.trim() == "No" || pernottamento.trim() == "") {
-        messaggio += "Per quanto riguarda invece il pernottamento, non ne avrò bisogno.%0A";
-      } else if (pernottamento.trim() == "Si") {
-        messaggio += "Per quanto riguarda invece il pernottamento ti comunico di averne bisogno";
-        if (servizioExtra == "Estetista") {
+      if (!pernottamento || pernottamento === "no") {
+        messaggio += "%0APer quanto riguarda invece il pernottamento, non ne avrò bisogno.%0A";
+      } else if (pernottamento === "si") {
+        messaggio += "%0APer quanto riguarda invece il pernottamento ti comunico di averne bisogno";
+        if (servizioExtra === "estetista") {
           messaggio += ` e di aver bisogno di una estetista.%0A`;
-        } else if (servizioExtra == "Parrucchiera") {
+        } else if (servizioExtra === "parrucchiera") {
           messaggio += ` e di aver bisogno di una parrucchiera.%0A`;
-        } else {
+        } else if (servizioExtra === "entrambe") {
           messaggio += ` e di aver bisogno sia di una estetista che della parrucchiera.%0A`;
+        } else {
+          messaggio += "%0A";
         }
       }
-
 
     } else {
       messaggio += "Mi dispace informarvi che non potrò essere presente al vostro matrimonio, ma quel giorno vi porterò nel mio cuore. Vi auguro una giornata meravigliosa!";
@@ -80,9 +81,6 @@ const ConfermaPartecipazione = () => {
     window.open(urlWhatsApp, '_blank');
   };
 
-  // function setPernottamento(value: string): void {
-  //   throw new Error("Function not implemented.");
-  // }
 
   return (
     <section className="pt-8 pb-20 px-6 paper-texture">
