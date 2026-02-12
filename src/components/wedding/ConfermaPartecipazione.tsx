@@ -12,6 +12,8 @@ const ConfermaPartecipazione = () => {
   const [bambini, setBambini] = useState<string>("");
   const [transfer, setTransfer] = useState("");
   const [intolleranze, setIntolleranze] = useState("");
+  const [pernottamento, setPernottamento] = useState<string | null>(null);
+  const [servizioExtra, setServizioExtra] = useState<string | null>(null);
 
   // Inserisci qui il numero di telefono in formato internazionale (es: 393331234567)
   const numeroWhatsApp = "393666706480";
@@ -28,7 +30,7 @@ const ConfermaPartecipazione = () => {
     }
 
     let messaggio = "CONFERMA PARTECIPAZIONE MATRIMONIO%0A%0A";
-    messaggio += `Cari Annamaria e Agostino, sono ${encodeURIComponent(nome)}%0A`;
+    messaggio += `Cari Agostino e Annamaria, sono ${encodeURIComponent(nome)}%0A`;
 
     if (selectedOption === 'si') {
       messaggio += 'Volevo dirvi che parteciperò al vostro matrimonio!%0A';
@@ -54,6 +56,22 @@ const ConfermaPartecipazione = () => {
           messaggio += `Per quanto riguarda eventuali intolleranze alimentari: ${encodeURIComponent(intolleranze)}%0A`;
         }
       }
+
+
+      if (pernottamento.trim() == "No" || pernottamento.trim() == "") {
+        messaggio += "Per quanto riguarda invece il pernottamento, non ne avrò bisogno.%0A";
+      } else if (pernottamento.trim() == "Si") {
+        messaggio += "Per quanto riguarda invece il pernottamento ti comunico di averne bisogno";
+        if (servizioExtra == "Estetista") {
+          messaggio += ` e di aver bisogno di una estetista.%0A`;
+        } else if (servizioExtra == "Parrucchiera") {
+          messaggio += ` e di aver bisogno di una parrucchiera.%0A`;
+        } else {
+          messaggio += ` e di aver bisogno sia di una estetista che della parrucchiera.%0A`;
+        }
+      }
+
+
     } else {
       messaggio += "Mi dispace informarvi che non potrò essere presente al vostro matrimonio, ma quel giorno vi porterò nel mio cuore. Vi auguro una giornata meravigliosa!";
     }
@@ -61,6 +79,10 @@ const ConfermaPartecipazione = () => {
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${messaggio}`;
     window.open(urlWhatsApp, '_blank');
   };
+
+  // function setPernottamento(value: string): void {
+  //   throw new Error("Function not implemented.");
+  // }
 
   return (
     <section className="pt-8 pb-20 px-6 paper-texture">
@@ -171,6 +193,39 @@ const ConfermaPartecipazione = () => {
                       rows={1}
                     />
                   </div>
+                  <div className="mt-6">
+                    <Label htmlFor="pernottamento" className="font-sans text-sm text-muted-foreground mb-2 block">Desideri usufruire del pernottamento il 29 sera?</Label>
+                    <select
+                      id="pernottamento"
+                      value={pernottamento ?? ''}
+                      onChange={(e) => {
+                        const value = e.target.value || null;
+                        setPernottamento(value);
+                        if (value !== 'si') setServizioExtra(null);
+                      }}
+                      className="bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2 px-2 w-full text-base font-sans"
+                    >
+                      <option className="font-sans text-muted-foreground" value=""></option>
+                      <option className="font-sans text-muted-foreground" value="si">Sì</option>
+                      <option className="font-sans text-muted-foreground" value="no">No</option>
+                    </select>
+                  </div>
+                  {pernottamento === 'si' && (
+                    <div className="mt-6">
+                      <Label htmlFor="servizio-extra" className="font-sans text-sm text-muted-foreground mb-2 block">Necessiti di una estetista o di una parrucchiera?</Label>
+                      <select
+                        id="servizio-extra"
+                        value={servizioExtra ?? ''}
+                        onChange={(e) => setServizioExtra(e.target.value || null)}
+                        className="bg-white border-2 border-stone-300 rounded-lg min-h-[40px] py-2 px-2 w-full text-base font-sans"
+                      >
+                        <option className="font-sans text-muted-foreground" value=""></option>
+                        <option className="font-sans text-muted-foreground" value="estetista">Estetista</option>
+                        <option className="font-sans text-muted-foreground" value="parrucchiera">Parrucchiera</option>
+                        <option className="font-sans text-muted-foreground" value="entrambe">Entrambe</option>
+                      </select>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
