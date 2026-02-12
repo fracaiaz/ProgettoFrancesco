@@ -46,11 +46,11 @@ const HeroSection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5, duration: 1.8, ease: "easeOut" }}
                 >
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '6rem', fontWeight: '550' }}>A</span>
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '550' }}>nnamaria</span><br />
-                    <span className="text-gold" style={{ fontFamily: 'Silenter, serif', fontSize: '4rem', fontWeight: '550' }}>&</span><br />
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '6rem', fontWeight: '550' }}>A</span>
-                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '550' }}>gostino</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '6rem', fontWeight: '600' }}>A</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '600' }}>nnamaria</span><br />
+                    <span className="text-gold" style={{ fontFamily: 'Silenter, serif', fontSize: '4rem', fontWeight: '600' }}>&</span><br />
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '6rem', fontWeight: '600' }}>A</span>
+                    <span style={{ fontFamily: 'Silenter, serif', fontSize: '5rem', fontWeight: '600' }}>gostino</span>
                 </motion.h1>
             </motion.div>
         </section>
