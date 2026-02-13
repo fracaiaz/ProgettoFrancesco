@@ -6,6 +6,7 @@ import AudioPlayer from "@/components/wedding/AudioPlayer";
 
 const EnvelopeSection = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [hasBeenClicked, setHasBeenClicked] = useState(false);
 
     return (
         <section className="relative flex flex-col items-center justify-start px-6 pt-20 pb-20 overflow-hidden paper-texture">
@@ -18,7 +19,11 @@ const EnvelopeSection = () => {
             >
 
                 {/* Envelope Section */}
-                <div id="busta" className="relative z-20 mt-20 cursor-pointer" style={{ paddingTop: '3vh' }} onClick={() => setIsOpen((prev) => !prev)}>
+                <div id="busta" className="relative z-20 mt-20 cursor-pointer" style={{ paddingTop: '3vh' }}
+                    onClick={() => {
+                        setIsOpen((prev) => !prev);
+                        if (!hasBeenClicked) setHasBeenClicked(true);
+                    }}>
                     <motion.div
                         className="relative mx-auto"
                         initial={{ opacity: 0, y: 30 }}
@@ -274,10 +279,16 @@ const EnvelopeSection = () => {
                             >
                                 <motion.div
                                     animate={{
-                                        scale: isOpen ? 1.1 : 1.3,
+                                        scale: isOpen || hasBeenClicked ? 1.1 : [1.15, 1, 1, 1.15],
                                         opacity: 1,
                                     }}
-                                    transition={{ duration: 0.5, delay: isOpen ? 0.2 : 0.5 }}
+                                    transition={{
+                                        duration: isOpen || hasBeenClicked ? 0.5 : 1,
+                                        times: isOpen || hasBeenClicked ? undefined : [0, 0.5, 0.5, 1],
+                                        repeat: isOpen || hasBeenClicked ? 0 : Infinity,
+                                        repeatDelay: isOpen || hasBeenClicked ? 0 : 1.5,
+                                    }}
+                                    whileTap={{ scale: 0.95 }}
                                 >
                                     <img
                                         src={logo}
