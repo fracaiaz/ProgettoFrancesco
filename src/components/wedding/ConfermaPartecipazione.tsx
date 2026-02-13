@@ -56,7 +56,7 @@ const ConfermaPartecipazione = () => {
           messaggio += `🚘per quanto riguarda la necessità di un transfer: ${transfer}\n`;
         }
         if (intolleranze.trim()) {
-          messaggio += `🍽️per quanto riguarda le intolleranze alimentari: ${intolleranze}\n`;
+          messaggio += `🍴per quanto riguarda le intolleranze alimentari: ${intolleranze}\n`;
         }
       }
 
