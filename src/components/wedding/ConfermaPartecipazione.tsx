@@ -16,7 +16,7 @@ const ConfermaPartecipazione = () => {
   const [servizioExtra, setServizioExtra] = useState<string | null>(null);
 
   // Inserisci qui il numero di telefono in formato internazionale (es: 393331234567)
-  const numeroWhatsApp = "393666706480";
+  const numeroWhatsApp = "393804985232";
 
   const handleInviaRisposta = () => {
     if (!nome.trim()) {
