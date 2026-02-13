@@ -44,6 +44,8 @@ const ConfermaPartecipazione = () => {
         messaggio += `👥Saremo in totale ${numAdulti} adulti e 1 bambino.\n\n`;
       } else if (numAdulti == 1 && numBambini > 1) {
         messaggio += `👥Saremo in totale 1 adulto e ${numBambini} bambini.\n\n`;
+      } else if (numAdulti == 1 && numBambini == 1) {
+        messaggio += `👥Saremo in totale 1 adulto e 1 bambino.\n\n`;
       } else if (numAdulti > 1) {
         messaggio += `👥Saremo in totale ${numAdulti} adulti.\n\n`;
       } else {
