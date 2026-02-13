@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Gift, Heart, ExternalLink } from "lucide-react";
 import { useState } from "react";
+import { Check } from "lucide-react";
 import tastoRegalo from "@/assets/tasto_regalo.png";
 import {
   Dialog,
@@ -13,6 +14,17 @@ import {
 const GiftsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const handleCopy = async (text: string, key: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(key);
+      // La spunta resta finché non si chiude la modale o si copia altro
+    } catch (err) {
+      // fallback o errore
+    }
+  };
 
   return (
     <section className="pt-12 pb-6 px-6 paper-texture">
@@ -115,7 +127,10 @@ const GiftsSection = () => {
           </AnimatePresence>
         </motion.div>
 
-        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <Dialog open={isModalOpen} onOpenChange={(open) => {
+          setIsModalOpen(open);
+          if (!open) setCopied(null);
+        }}>
           <DialogContent className="sm:max-w-md w-[calc(100%-3rem)] mx-auto transition-all duration-1000 ease-out rounded-xl">
             <DialogHeader>
               <DialogTitle className="font-serif text-2xl">I nostri dati bancari</DialogTitle>
@@ -126,15 +141,39 @@ const GiftsSection = () => {
             <div className="space-y-4 py-4">
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-muted-foreground">Intestatario</p>
-                <p className="text-base font-sans">Agostino Camigliano</p>
+                <button
+                  className="text-base font-sans group flex items-center gap-2 hover:text-gold transition-colors"
+                  style={{ cursor: 'pointer', background: 'none', border: 'none', padding: 0 }}
+                  onClick={() => handleCopy('Agostino Camigliano', 'intestatario')}
+                  title="Copia Intestatario"
+                >
+                  Agostino Camigliano
+                  {copied === 'intestatario' ? <Check className="w-4 h-4 text-green-600" /> : null}
+                </button>
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-muted-foreground">IBAN</p>
-                <p className="text-base font-mono break-all">IT64F0306901765100000002823</p>
+                <button
+                  className="text-base font-mono break-all group flex items-center gap-2 hover:text-gold transition-colors"
+                  style={{ cursor: 'pointer', background: 'none', border: 'none', padding: 0 }}
+                  onClick={() => handleCopy('IT64F0306901765100000002823', 'iban')}
+                  title="Copia IBAN"
+                >
+                  IT64F0306901765100000002823
+                  {copied === 'iban' ? <Check className="w-4 h-4 text-green-600" /> : null}
+                </button>
               </div>
               <div className="space-y-2">
                 <p className="text-sm font-semibold text-muted-foreground">Causale</p>
-                <p className="text-base font-sans">Regalo matrimonio A&A</p>
+                <button
+                  className="text-base font-sans group flex items-center gap-2 hover:text-gold transition-colors"
+                  style={{ cursor: 'pointer', background: 'none', border: 'none', padding: 0 }}
+                  onClick={() => handleCopy('Regalo matrimonio A&A', 'causale')}
+                  title="Copia Causale"
+                >
+                  Regalo matrimonio A&A
+                  {copied === 'causale' ? <Check className="w-4 h-4 text-green-600" /> : null}
+                </button>
               </div>
             </div>
           </DialogContent>
