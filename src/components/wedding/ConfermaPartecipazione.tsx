@@ -29,58 +29,58 @@ const ConfermaPartecipazione = () => {
       return;
     }
 
-    let messaggio = "CONFERMA PARTECIPAZIONE MATRIMONIO%0A%0A";
-    messaggio += `Cari Agostino e Annamaria, sono ${encodeURIComponent(nome)}%0A`;
+    let messaggio = `CONFERMA PARTECIPAZIONE MATRIMONIO \u{1F48D}\n\n`;
+    messaggio += `Cari Agostino e Annamaria, sono ${nome}\n`;
 
     if (selectedOption === 'si') {
-      messaggio += 'Volevo dirvi che parteciperò al vostro matrimonio!%0A';
+      messaggio += `\u{2705} Volevo dirvi che parteciperò al vostro matrimonio!\n`;
 
       const numAdulti = parseInt(adulti) || 0;
       const numBambini = parseInt(bambini) || 0;
 
       if (numAdulti > 1 && numBambini > 1) {
-        messaggio += `Saremo in totale ${numAdulti} adulti e ${numBambini} bambini.%0A%0A`;
+        messaggio += `🧑‍🤝‍🧑 Saremo in totale ${numAdulti} adulti e ${numBambini} bambini.\n\n`;
       } else if (numAdulti > 1 && numBambini == 1) {
-        messaggio += `Saremo in totale ${numAdulti} adulti e 1 bambino.%0A%0A`;
+        messaggio += `🧑‍🤝‍🧑 Saremo in totale ${numAdulti} adulti e 1 bambino.\n\n`;
       } else if (numAdulti == 1 && numBambini > 1) {
-        messaggio += `Saremo in totale 1 adulto e ${numBambini} bambini.%0A%0A`;
+        messaggio += `🧑‍🤝‍🧑 Saremo in totale 1 adulto e ${numBambini} bambini.\n\n`;
       } else if (numAdulti > 1) {
-        messaggio += `Saremo in totale ${numAdulti} adulti.%0A%0A`;
+        messaggio += `🧑‍🤝‍🧑 Saremo in totale ${numAdulti} adulti.\n\n`;
       } else {
-        messaggio += "Per l'occasione sarò da solo.%0A%0A";
+        messaggio += `🧑‍🤝‍🧑 Per l'occasione sarò da solo.\n\n`;
       }
 
       if (intolleranze.trim() || transfer.trim()) {
-        messaggio += "Volevo comunicarvi anche le seguenti informazioni:%0A";
+        messaggio += "Volevo comunicarvi anche le seguenti informazioni:\n";
         if (transfer.trim()) {
-          messaggio += `- per quanto riguarda la necessità di un transfer: ${encodeURIComponent(transfer)}%0A`;
+          messaggio += `🚗 Transfer: ${transfer}\n`;
         }
         if (intolleranze.trim()) {
-          messaggio += `- per quanto riguarda eventuali intolleranze alimentari: ${encodeURIComponent(intolleranze)}%0A`;
+          messaggio += `🍽️ Intolleranze: ${intolleranze}\n`;
         }
       }
 
-
       if (!pernottamento || pernottamento === "no") {
-        messaggio += "%0APer quanto riguarda invece il pernottamento, non ne avrò bisogno.%0A";
-      } else if (pernottamento === "si") {
-        messaggio += "%0APer quanto riguarda invece il pernottamento ti comunico di averne bisogno";
+        messaggio += "\n🏩 Pernottamento: non ne avrò bisogno.\n";
+      } else {
+        messaggio += "\n🏩 Pernottamento: ne avrò bisogno";
         if (servizioExtra === "estetista") {
-          messaggio += ` e di necessitare di una estetista.%0A`;
+          messaggio += ` e necessito di una estetista.\n`;
         } else if (servizioExtra === "parrucchiera") {
-          messaggio += ` e di necessitare di una parrucchiera.%0A`;
+          messaggio += ` e necessito di una parrucchiera.\n`;
         } else if (servizioExtra === "entrambe") {
-          messaggio += ` e di necessitare sia di una estetista che della parrucchiera.%0A`;
+          messaggio += ` e necessito di estetista e parrucchiera.\n`;
         } else {
-          messaggio += "%0A";
+          messaggio += "\n";
         }
       }
 
     } else {
-      messaggio += "Mi dispace informarvi che non potrò essere presente al vostro matrimonio, ma quel giorno vi porterò nel mio cuore. Vi auguro una giornata meravigliosa!";
+      // Opzione "No": Notare che uso \u{1F44B} per la mano che saluta
+      messaggio += "❌ Mi dispiace informarvi che non potrò essere presente al vostro matrimonio, ma quel giorno vi porterò nel mio cuore.\nVi auguro una giornata meravigliosa! \u{1F44B}";
     }
 
-    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${messaggio}`;
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(messaggio)}`;
     window.open(urlWhatsApp, '_blank');
   };
 
