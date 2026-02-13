@@ -29,41 +29,41 @@ const ConfermaPartecipazione = () => {
       return;
     }
 
-    let messaggio = `CONFERMA PARTECIPAZIONE MATRIMONIO \u{1F48D}\n\n`;
+    let messaggio = `CONFERMA PARTECIPAZIONE MATRIMONIO💍\n\n`;
     messaggio += `Cari Agostino e Annamaria, sono ${nome}\n`;
 
     if (selectedOption === 'si') {
-      messaggio += `\u{2705} Volevo dirvi che parteciperò al vostro matrimonio!\n`;
+      messaggio += `✅Volevo dirvi che parteciperò al vostro matrimonio!\n`;
 
       const numAdulti = parseInt(adulti) || 0;
       const numBambini = parseInt(bambini) || 0;
 
       if (numAdulti > 1 && numBambini > 1) {
-        messaggio += `🧑‍🤝‍🧑 Saremo in totale ${numAdulti} adulti e ${numBambini} bambini.\n\n`;
+        messaggio += `👥Saremo in totale ${numAdulti} adulti e ${numBambini} bambini.\n\n`;
       } else if (numAdulti > 1 && numBambini == 1) {
-        messaggio += `🧑‍🤝‍🧑 Saremo in totale ${numAdulti} adulti e 1 bambino.\n\n`;
+        messaggio += `👥Saremo in totale ${numAdulti} adulti e 1 bambino.\n\n`;
       } else if (numAdulti == 1 && numBambini > 1) {
-        messaggio += `🧑‍🤝‍🧑 Saremo in totale 1 adulto e ${numBambini} bambini.\n\n`;
+        messaggio += `👥Saremo in totale 1 adulto e ${numBambini} bambini.\n\n`;
       } else if (numAdulti > 1) {
-        messaggio += `🧑‍🤝‍🧑 Saremo in totale ${numAdulti} adulti.\n\n`;
+        messaggio += `👥Saremo in totale ${numAdulti} adulti.\n\n`;
       } else {
-        messaggio += `🧑‍🤝‍🧑 Per l'occasione sarò da solo.\n\n`;
+        messaggio += `👤Per l'occasione sarò da solo.\n\n`;
       }
 
       if (intolleranze.trim() || transfer.trim()) {
         messaggio += "Volevo comunicarvi anche le seguenti informazioni:\n";
         if (transfer.trim()) {
-          messaggio += `🚗 Transfer: ${transfer}\n`;
+          messaggio += `🚘per quanto riguarda la necessità di un transfer: ${transfer}\n`;
         }
         if (intolleranze.trim()) {
-          messaggio += `🍽️ Intolleranze: ${intolleranze}\n`;
+          messaggio += `🍽️per quanto riguarda le intolleranze alimentari: ${intolleranze}\n`;
         }
       }
 
       if (!pernottamento || pernottamento === "no") {
-        messaggio += "\n🏩 Pernottamento: non ne avrò bisogno.\n";
+        messaggio += "\n🏨 Pernottamento: non ne avrò bisogno.\n";
       } else {
-        messaggio += "\n🏩 Pernottamento: ne avrò bisogno";
+        messaggio += "\n🏨 Pernottamento: ne avrò bisogno";
         if (servizioExtra === "estetista") {
           messaggio += ` e necessito di una estetista.\n`;
         } else if (servizioExtra === "parrucchiera") {
@@ -77,7 +77,7 @@ const ConfermaPartecipazione = () => {
 
     } else {
       // Opzione "No": Notare che uso \u{1F44B} per la mano che saluta
-      messaggio += "❌ Mi dispiace informarvi che non potrò essere presente al vostro matrimonio, ma quel giorno vi porterò nel mio cuore.\nVi auguro una giornata meravigliosa! \u{1F44B}";
+      messaggio += "❌ Mi dispiace informarvi che non potrò essere presente al vostro matrimonio, ma quel giorno vi porterò nel mio cuore.\nVi auguro una giornata meravigliosa!❤️";
     }
 
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(messaggio)}`;
